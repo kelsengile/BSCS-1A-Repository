@@ -1,2 +1,2 @@
 print("TITENG MALAKI NA PARANG NIGGA")
-print("TITEEEEEEEEEEEEEEEEEEEE")
+print("etoites")
