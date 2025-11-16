@@ -1,20 +1,37 @@
 import java.util.Scanner;
 
-public class Main2 {
+public class Main {
 	
 	private static final int MAX_GUESSES = 5;
     private static final String ANSWER = "AMULET";
 	
 	public static void main(String[] args) {
+		The_End();
+		Animation_Thanks ();
 		
 		Animation_Title_Sequence();
 		
 		// Menu
-		if (Menu() == 1) {
+		int input = Menu();
+		
+		if (input == 1) {
 			Intro();
 			Scene1 ();
 		}
-		else {
+		else if (input == 2){
+			
+			System.out.println(" ========================= ");
+			System.out.println("  ");
+			System.out.println(" ***** Program Ended ***** ");
+			System.out.println("  ");
+			System.out.println(" ========================= ");
+		}
+		else{
+			System.out.println(" ========================= ");
+			System.out.println("  ");
+			System.out.println(" ***** Invalid Input ***** ");
+			System.out.println("  ");
+			System.out.println(" ========================= ");
 		}
 		
 
@@ -245,10 +262,18 @@ public class Main2 {
 		int option = sc.nextInt();
 		
 		if (option == 1) {
-				Scene2A();
+			Scene2A();
+		}
+		else if (option == 2 ){
+				Scene2B();
 		}
 		else {
-				Scene2B();
+			System.out.println(" ========================= ");
+			System.out.println("  ");
+			System.out.println(" ***** Invalid Input ***** ");
+			System.out.println("  ");
+			System.out.println(" ========================= ");
+			Scene1();
 		}
 		
 	}
@@ -351,7 +376,12 @@ public class Main2 {
 			    Scene1();
 			}
 			else {
-				
+				System.out.println(" ========================= ");
+				System.out.println("  ");
+				System.out.println(" ***** Invalid Input ***** ");
+				System.out.println("  ");
+				System.out.println(" ========================= ");
+				Scene2A();
 			}
 			
 		}
@@ -432,7 +462,12 @@ public class Main2 {
 			    Scene1();
 			}
 			else {
-				
+				System.out.println(" ========================= ");
+				System.out.println("  ");
+				System.out.println(" ***** Invalid Input ***** ");
+				System.out.println("  ");
+				System.out.println(" ========================= ");
+				Scene2A();
 			}
 			
 		}
@@ -498,7 +533,12 @@ public class Main2 {
 		    Scene1();
 		}
 		else {
-			
+			System.out.println(" ========================= ");
+			System.out.println("  ");
+			System.out.println(" ***** Invalid Input ***** ");
+			System.out.println("  ");
+			System.out.println(" ========================= ");
+			Scene2B();
 		}
 	}
 	
@@ -573,8 +613,16 @@ Scanner sc = new Scanner(System.in);
 		if (option == 1) {
 			SceneV2A();
 		}
-		else {
+		else if (option == 2){
 			SceneV2B();
+		}
+		else {
+			System.out.println(" ========================= ");
+			System.out.println("  ");
+			System.out.println(" ***** Invalid Input ***** ");
+			System.out.println("  ");
+			System.out.println(" ========================= ");
+			BridgeV2();
 		}
 	
 	}
@@ -713,7 +761,7 @@ public static void SceneV2A() {
 		// next stage
 		
 	}
-	else {
+	else if (option == 2){
 		
 		Animation_Leave_House();
 		
@@ -827,10 +875,27 @@ public static void SceneV2A() {
 			else {
 			}
 		}
-		else {
+		else if (result == 2){
 			The_End ();
+			Animation_Thanks ();
+		}
+		else {
+			System.out.println(" ========================= ");
+			System.out.println("  ");
+			System.out.println(" ***** Invalid Input ***** ");
+			System.out.println("  ");
+			System.out.println(" ========================= ");
+			SceneV2A();
 		}
 		
+	}
+	else {
+		System.out.println(" ========================= ");
+		System.out.println("  ");
+		System.out.println(" ***** Invalid Input ***** ");
+		System.out.println("  ");
+		System.out.println(" ========================= ");
+		SceneV2A();
 	}
 	
 }
@@ -923,7 +988,7 @@ public static void SceneV2B() {
 	if (result == 1) {
 	    BridgeV2();
 	}
-	else {
+	else  {
 		
 	}
 	
@@ -1343,6 +1408,7 @@ public static void Good_Ending () {
 	space(2000);
 	
 	The_End ();
+	Animation_Thanks ();
 	//good engine title
 	
 }
@@ -1493,17 +1559,34 @@ public static void Bad_Ending() {
 	int result = Death1();
 
 	if (result == 1) {
-		if (Menu() == 1) {
+		
+		int input = Menu();
+		
+		if (input == 1) {
 			Intro();
 			Scene1 ();
 		}
-		else {
+		else if (input == 2){
+			
+			System.out.println(" ========================= ");
+			System.out.println("  ");
+			System.out.println(" ***** Program Ended ***** ");
+			System.out.println("  ");
+			System.out.println(" ========================= ");
+		}
+		else{
+			System.out.println(" ========================= ");
+			System.out.println("  ");
+			System.out.println(" ***** Invalid Input ***** ");
+			System.out.println("  ");
+			System.out.println(" ========================= ");
 		}
 		
 		
 	}
 	else {
 		The_End ();
+		Animation_Thanks ();
 	}
 	
 	// bad ending title
@@ -1529,7 +1612,7 @@ public static boolean promptConfirmation(Scanner input) {
 
 	System.out.println("=============================");
 	System.out.println("");
-	System.out.println("-----Riddle to the Death-----");
+	System.out.println("     Riddle to the Death     ");
 	System.out.println("");
 	System.out.println("        Proceed: (y/n)?");
 	System.out.println("");
@@ -1651,6 +1734,44 @@ public static void gameEnd(boolean guessed) {
 		System.out.println(" ");
 		System.out.println(" ");
 		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
 		
 	}
 	
@@ -1671,11 +1792,8 @@ public static void gameEnd(boolean guessed) {
 		
 	}
 	
-	public static void End () {
-		
-	}
 	
-	public static int Death1 () {
+public static int Death1 () {
 		
 		Animation_Death ();
 		Scanner sc = new Scanner(System.in);
@@ -2313,10 +2431,10 @@ space(500);
 		
 		System.out.println(" ======================================================= ");
 		System.out.println("                                          ");
-		System.out.println("                 ________                                    ");
+		System.out.println("  ~     ~       ________       ~                             ");
 		System.out.println("               /        |        _________                     ");
-		System.out.println("o              |        |       /         |           ");
-		System.out.println("T__            |        |       |         |            ");
+		System.out.println("o       ~      |        |       /         |    ~      ");
+		System.out.println("T__  ~         |        |       |         |     ~       ");
 		System.out.println("  |____________|________|_______|_________|_____________");
 		System.out.println("                                          ");
 		System.out.println(" =======================================================");
@@ -2325,10 +2443,10 @@ space(500);
 		
 		System.out.println(" ======================================================= ");
 		System.out.println("                                          ");
-		System.out.println("                 ________                                    ");
+		System.out.println("       ~    ~    ________       ~            ~                 ");
 		System.out.println("               /        |        _________                     ");
-		System.out.println("  o            |        |       /         |           ");
-		System.out.println("__T            |        |       |         |            ");
+		System.out.println("  o     ~      |        |       /         |    ~       ");
+		System.out.println("__T       ~    |        |       |         |      ~      ");
 		System.out.println("__n____________|________|_______|_________|_____________");
 		System.out.println("                                          ");
 		System.out.println(" =======================================================");
@@ -2337,10 +2455,10 @@ space(500);
 		
 		System.out.println(" ======================================================= ");
 		System.out.println("                                                         ");
-		System.out.println("                 ________                                ");
-		System.out.println("               /        |        _________               ");
-		System.out.println("    o          |        |       /         |              ");
-		System.out.println("___ T          |        |       |         |              ");
+		System.out.println("     ~      ~   ________                   ~             ");
+		System.out.println("               /        |        _________           ~    ");
+		System.out.println("    o     ~    |        |       /         |     ~         ");
+		System.out.println("___ T     ~    |        |       |         |          ~    ");
 		System.out.println("__|_n__________|________|_______|_________|_____________ ");
 		System.out.println("                                                         ");
 		System.out.println(" ======================================================= ");
@@ -2392,6 +2510,7 @@ space(500);
 		space(1000);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                   ___________________________                       ");
 		System.out.println("                  /                          |          ");
 		System.out.println("                  |      [***    ]           |             ");
@@ -2403,6 +2522,7 @@ space(500);
 		space(1000);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                   ___________________________                       ");
 		System.out.println("                  /                          |          ");
 		System.out.println("                  |      [***    ]           |             ");
@@ -2414,6 +2534,7 @@ space(500);
 		space(500);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                   ___________________________                       ");
 		System.out.println("                  /                          |          ");
 		System.out.println("                  |      [***    ]           |             ");
@@ -2425,6 +2546,7 @@ space(500);
 		space(500);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                   ___________________________                       ");
 		System.out.println("                  /                          |          ");
 		System.out.println("                  |      [***    ]           |             ");
@@ -2436,6 +2558,7 @@ space(500);
 		space(500);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                   ___________________________                       ");
 		System.out.println("                  /                          |          ");
 		System.out.println("                  |      [***    ]           |             ");
@@ -2451,7 +2574,7 @@ space(500);
 		
 space(500);
 		
-		System.out.println(" ======================================== ");
+		System.out.println(" ========================================= ");
 		System.out.println(" ");
 		System.out.println("                                          ");
 		System.out.println("                     o                ");
@@ -2462,7 +2585,7 @@ space(500);
 		
 space(500);
 		
-		System.out.println(" ======================================== ");
+		System.out.println(" ========================================= ");
 	
 		System.out.println("                                          ");
 		System.out.println("                     o                ");
@@ -2473,7 +2596,7 @@ space(500);
 		
 space(500);
 		
-		System.out.println(" ======================================== ");
+		System.out.println(" ========================================= ");
 		
 		System.out.println("                     o                ");
 		System.out.println("                     T");
@@ -2482,7 +2605,7 @@ space(500);
 		
 space(500);
 		
-		System.out.println(" ======================================== ");
+		System.out.println(" ========================================= ");
 		System.out.println(" ========================================= ");
 		
 space(500);
@@ -2498,6 +2621,7 @@ space(500);
         space(2000);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                   ___________________________                       ");
 		System.out.println("                  /                          |          ");
 		System.out.println("                  |      [***    ]           |             ");
@@ -2509,6 +2633,7 @@ space(500);
 		space(2000);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                   ___________________________                       ");
 		System.out.println("                  /                          |          ");
 		System.out.println("                  |      [***    ]           |             ");
@@ -2520,6 +2645,7 @@ space(500);
 		space(2000);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                   ___________________________                       ");
 		System.out.println("                  /                          |          ");
 		System.out.println("                  |      [***    ]           |             ");
@@ -2536,6 +2662,7 @@ space(500);
 space(500);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                   ___________________________                       ");
 		System.out.println("                  /                          |          ");
 		System.out.println("                  |      [***    ]           |             ");
@@ -2548,6 +2675,7 @@ space(500);
 	space(500);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                   ___________________________                       ");
 		System.out.println("                  /                          |          ");
 		System.out.println("                  |      [***    ]           |             ");
@@ -2559,6 +2687,7 @@ space(500);
 space(500);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                   ___________________________                       ");
 		System.out.println("                  /                          |          ");
 		System.out.println("                  |      [***    ]           |             ");
@@ -2570,6 +2699,7 @@ space(500);
 	space(500);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                   ___________________________                       ");
 		System.out.println("    *Coward*      /                          |          ");
 		System.out.println("                  |      [***    ]           |             ");
@@ -2578,9 +2708,10 @@ space(500);
 		System.out.println("           n    | |                   |   |  | ");
 		System.out.println(" =======================================================");
 		
-		space(1000);
+		space(2000);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                   ___________________________                       ");
 		System.out.println("                  /                          |          ");
 		System.out.println("                  |      [***    ]           |             ");
@@ -2589,7 +2720,7 @@ space(500);
 		System.out.println("      n         | |                   |   |  | ");
 		System.out.println(" =======================================================");
 		
-		space(1000);
+		space(2000);
 	}
 	
 	public static void Animation_Enter_Cottage() {
@@ -2597,6 +2728,7 @@ space(500);
 		space(500);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                   ___________________________                       ");
 		System.out.println("                  /                          |          ");
 		System.out.println("                  |   [***    ]  [***    ]   |             ");
@@ -2608,6 +2740,7 @@ space(500);
 space(500);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                   ___________________________                       ");
 		System.out.println("                  /                          |          ");
 		System.out.println("                  |   [***    ]  [***    ]   |             ");
@@ -2619,6 +2752,7 @@ space(500);
 space(500);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                   ___________________________                       ");
 		System.out.println("                  /                          |          ");
 		System.out.println("                  |   [***    ]  [***    ]   |             ");
@@ -2630,12 +2764,13 @@ space(500);
 space(500);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                   ___________________________                       ");
 		System.out.println("                  /                          |          ");
 		System.out.println("                  |   [***    ]  [***    ]   |             ");
-		System.out.println("                __|  		 o           |         ");
-		System.out.println("                | |   		 T           |    ");
-		System.out.println("                | |   		 n           | ");
+		System.out.println("                __|  		 o            |         ");
+		System.out.println("                | |   		 T            |    ");
+		System.out.println("                | |   		 n            | ");
 		System.out.println(" =======================================================");
 		
 space(1000);
@@ -2649,6 +2784,7 @@ space(1000);
 		space(500);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("     ___________________________                       ");
 		System.out.println("    /                          |          ");
 		System.out.println("    |                          |             ");
@@ -2660,6 +2796,7 @@ space(1000);
 		space(500);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("     ___________________________                       ");
 		System.out.println("    /                          |          ");
 		System.out.println("    |                          |             ");
@@ -2671,6 +2808,7 @@ space(1000);
 		space(500);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("     ___________________________                       ");
 		System.out.println("    /                          |          ");
 		System.out.println("    |                          |             ");
@@ -2682,6 +2820,7 @@ space(1000);
 		space(500);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("     ___________________________                       ");
 		System.out.println("    /                          |          ");
 		System.out.println("    |                          |             ");
@@ -2693,6 +2832,7 @@ space(1000);
 		space(500);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("     ___________________________                       ");
 		System.out.println("    /                          |          ");
 		System.out.println("    |                          |             ");
@@ -2706,9 +2846,10 @@ space(1000);
 	
 	public static void Anmation_Speak () {
 		
-		space(500);
+		space(4000);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("   You have trespassed my domain and stole what is mine" );
 		System.out.println("     ___________________________                       ");
 		System.out.println("    /               _     _    |          ");
@@ -2718,9 +2859,10 @@ space(1000);
 		System.out.println("    |     n                    | ");
 		System.out.println(" =======================================================");
 		
-		space(5000);
+		space(4000);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                 you shall not leave this place!!!     " );
 		System.out.println("     ___________________________                       ");
 		System.out.println("    /               _     _    |          ");
@@ -2730,9 +2872,10 @@ space(1000);
 		System.out.println("    |     n                    | ");
 		System.out.println(" =======================================================");
 		
-		space(5000);
+		space(4000);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("     ___________________________                       ");
 		System.out.println("    /               _     _    |          ");
 		System.out.println("    |               o     o    |             ");
@@ -2741,9 +2884,10 @@ space(1000);
 		System.out.println("    |     n                    | ");
 		System.out.println(" =======================================================");
 		
-		space(500);
+		space(400);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("     ___________________________                       ");
 		System.out.println("    /               _     _    |          ");
 		System.out.println("    |               o     o    |             ");
@@ -2755,6 +2899,7 @@ space(1000);
 		space(500);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("     ___________________________                       ");
 		System.out.println("    /               _     _    |          ");
 		System.out.println("    |               o     o    |             ");
@@ -2766,6 +2911,7 @@ space(1000);
 		space(500);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("     ___________________________                       ");
 		System.out.println("    /               _     _    |          ");
 		System.out.println("    |               o     o    |             ");
@@ -2777,6 +2923,7 @@ space(1000);
 		space(500);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("     ___________________________                       ");
 		System.out.println("    /               _     _    |          ");
 		System.out.println("    |               o     o    |             ");
@@ -2788,6 +2935,7 @@ space(1000);
 		space(500);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("     ___________________________                       ");
 		System.out.println("    /               _     _    |          ");
 		System.out.println("    |               o     o    |             ");
@@ -2801,9 +2949,10 @@ space(1000);
 	
 public static void Anmation_Speak2 () {
 		
-		space(5000);
+		space(4000);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("   Since I am merciful I shall give you a chance        " );
 		System.out.println("     ___________________________                       ");
 		System.out.println("    /               _     _    |          ");
@@ -2813,9 +2962,10 @@ public static void Anmation_Speak2 () {
 		System.out.println("    |     n                    | ");
 		System.out.println(" =======================================================");
 		
-		space(5000);
+		space(4000);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                 to fix your mistakes       " );
 		System.out.println("     ___________________________                       ");
 		System.out.println("    /               _     _    |          ");
@@ -2825,9 +2975,10 @@ public static void Anmation_Speak2 () {
 		System.out.println("    |     n                    | ");
 		System.out.println(" =======================================================");
 		
-		space(5000);
+		space(4000);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("     ___________________________                       ");
 		System.out.println("    /               _     _    |          ");
 		System.out.println("    |               o     o    |             ");
@@ -2836,9 +2987,10 @@ public static void Anmation_Speak2 () {
 		System.out.println("    |     n                    | ");
 		System.out.println(" =======================================================");
 		
-		space(5000);
+		space(4000);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                 Answer this, mortal…     " );
 		System.out.println("     ___________________________                       ");
 		System.out.println("    /               _     _    |          ");
@@ -2848,9 +3000,10 @@ public static void Anmation_Speak2 () {
 		System.out.println("    |     n                    | ");
 		System.out.println(" =======================================================");
 		
-		space(5000);
+		space(4000);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                 I am worn, yet not clothes.     " );
 		System.out.println("     ___________________________                       ");
 		System.out.println("    /               _     _    |          ");
@@ -2860,9 +3013,10 @@ public static void Anmation_Speak2 () {
 		System.out.println("    |     n                    | ");
 		System.out.println(" =======================================================");
 		
-		space(5000);
+		space(4000);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                 I protect, yet can curse     " );
 		System.out.println("     ___________________________                       ");
 		System.out.println("    /               _     _    |          ");
@@ -2872,9 +3026,10 @@ public static void Anmation_Speak2 () {
 		System.out.println("    |     n                    | ");
 		System.out.println(" =======================================================");
 		
-		space(5000);
+		space(4000);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                 I am small, yet powerful     " );
 		System.out.println("     ___________________________                       ");
 		System.out.println("    /               _     _    |          ");
@@ -2884,9 +3039,10 @@ public static void Anmation_Speak2 () {
 		System.out.println("    |     n                    | ");
 		System.out.println(" =======================================================");
 		
-		space(5000);
+		space(4000);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("                          What am I?     " );
 		System.out.println("     ___________________________                       ");
 		System.out.println("    /               _     _    |          ");
@@ -2905,6 +3061,7 @@ public static void Anmation_Speak2 () {
 		space(500);
 		
 		System.out.println(" ======================================================= ");
+		System.out.println("");
 		System.out.println("     ___________________________                       ");
 		System.out.println("    /                          |          ");
 		System.out.println("    |                          |             ");
@@ -3406,6 +3563,223 @@ public static void Anmation_Speak2 () {
 				
 		
 					System.out.println(" =======================================================");
+	}
+	
+	public static void Animation_Thanks () {
+		
+		space(500);
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("  ");
+		System.out.println(    "    *****        DEVELOPERS:     *****    ");
+		System.out.println("  ");
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("\n\n ========================================= \n");
+		
+		space(500);
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("  ");
+		System.out.println(    "    *****        DEVELOPERS:     *****    ");
+		System.out.println("  ");
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println(      "          Kelsen Gile S. Conel          ");
+		System.out.println("\n\n ========================================= \n");
+		
+		space(500);
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("  ");
+		System.out.println(    "    *****        DEVELOPERS:     *****    ");
+		System.out.println("  ");
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println(      "          Kelsen Gile S. Conel          ");
+		System.out.println("");
+		System.out.println("\n\n ========================================= \n");
+		
+		space(500);
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("  ");
+		System.out.println(    "    *****        DEVELOPERS:     *****    ");
+		System.out.println("  ");
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println(      "          Kelsen Gile S. Conel          ");
+		System.out.println("");
+		System.out.println(      "          Charlestan D. Arroyo          ");
+		System.out.println("\n\n ========================================= \n");
+		
+		space(500);
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("  ");
+		System.out.println(    "    *****        DEVELOPERS:     *****    ");
+		System.out.println("  ");
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println(      "          Kelsen Gile S. Conel          ");
+		System.out.println("");
+		System.out.println(      "          Charlestan D. Arroyo          ");
+		System.out.println("");
+		System.out.println("\n\n ========================================= \n");
+		
+		space(500);
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("  ");
+		System.out.println(    "    *****        DEVELOPERS:     *****    ");
+		System.out.println("  ");
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println(      "          Kelsen Gile S. Conel          ");
+		System.out.println("");
+		System.out.println(      "          Charlestan D. Arroyo          ");
+		System.out.println("");
+		System.out.println(      "       Ralph Rexiel R. Lubuguin          ");
+		System.out.println("\n\n ========================================= \n");
+		
+		space(500);
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("  ");
+		System.out.println(    "    *****        DEVELOPERS:     *****    ");
+		System.out.println("  ");
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println(      "          Kelsen Gile S. Conel          ");
+		System.out.println("");
+		System.out.println(      "          Charlestan D. Arroyo          ");
+		System.out.println("");
+		System.out.println(      "       Ralph Rexiel R. Lubuguin          ");
+		System.out.println("");
+		System.out.println("\n\n ========================================= \n");
+		
+		space(500);
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("  ");
+		System.out.println(    "    *****        DEVELOPERS:     *****    ");
+		System.out.println("  ");
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println(      "          Kelsen Gile S. Conel          ");
+		System.out.println("");
+		System.out.println(      "          Charlestan D. Arroyo          ");
+		System.out.println("");
+		System.out.println(      "       Ralph Rexiel R. Lubuguin          ");
+		System.out.println("");
+		System.out.println(      "         Sean Fraser I. Castro          ");
+		System.out.println("\n\n ========================================= \n");
+		
+		space(500);
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("  ");
+		System.out.println(    "    *****        DEVELOPERS:     *****    ");
+		System.out.println("  ");
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("");
+		System.out.println("");
+		System.out.println(      "          Kelsen Gile S. Conel          ");
+		System.out.println("");
+		System.out.println(      "          Charlestan D. Arroyo          ");
+		System.out.println("");
+		System.out.println(      "       Ralph Rexiel R. Lubuguin          ");
+		System.out.println("");
+		System.out.println(      "         Sean Fraser I. Castro          ");
+		System.out.println("");
+		System.out.println("\n\n ========================================= \n");
+		
+		space(500);
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("  ");
+		System.out.println(    "    *****        DEVELOPERS:     *****    ");
+		System.out.println("  ");
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("\n\n ========================================= \n");
+		System.out.println("");
+		System.out.println(      "          Kelsen Gile S. Conel          ");
+		System.out.println("");
+		System.out.println(      "          Charlestan D. Arroyo          ");
+		System.out.println("");
+		System.out.println(      "       Ralph Rexiel R. Lubuguin          ");
+		System.out.println("");
+		System.out.println(      "         Sean Fraser I. Castro          ");
+		System.out.println("");
+		System.out.println(      "         Xavier Kent C. Ortega          ");
+		System.out.println("\n\n ========================================= \n");
+		
+		space(5000);
+		System.out.println(" ========================================= ");
+		System.out.println("");
+		String sentence1 = 
+				  
+				          "\n   T H A N K S   F O R   P L A Y I N G           ";
+		
+		for (int i = 0; i < sentence1.length(); i++) {
+	        System.out.print(sentence1.charAt(i));
+	        try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+	        
+	    }
+		
+		System.out.println("");
+		System.out.println("\n\n ========================================= \n");
+		space(5000);
+		
+		
+		
 	}
 	
 	
